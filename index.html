@@ -7,28 +7,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Limelight&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="index.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Limelight&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
     <title>Meu portfólio</title>
 </head>
 <body>
+    <header>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <section class="section-nome">
-            <h1>Olá, eu sou o <span>Ezequias Cordeiro</span></h1>
-            <h3>Desenvolvedor front end com experiência em JavaScript, HTML5, CSS3.</h3>
+        <section id="home" class="panel">
+            <section class="section-nome">
+                <h1>Olá, eu sou o <span>Ezequias Cordeiro</span></h1>
+                <h3>Desenvolvedor front end</h3>
+            </section>
+            <section class="section-botoes">
+                <button>
+                    Meu currículo
+                    <span class="buttons"></span>
+                </button>
+                <button>
+                    Sobre mim
+                    <span class="buttons"></span>
+                </button>
+            </section>
         </section>
-        <section class="section-botoes">
-            <button>
-                Meu currículo
-                <span class="followers"></span>
-            </button>
-            <button>
-                Sobre mim
-                <span class="followers"></span>
-            </button>
-        </section>
+        <section id="sobre" class="panel">Sobre</section>
+        <section id="projetos" class="panel">Projetos</section>
+        <section id="contato" class="panel">Contatos</section>
     </main>
     <footer>
         <h4><a href="#" target="_blank">Desenvolvido por Ezequias Cordeiro ©</a></h4>
     </footer>
 </body>
+<script src="index.js"></script>
 </html>

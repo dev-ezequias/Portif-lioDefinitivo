@@ -17,11 +17,60 @@
 html{
     font-family: Inter, sans-serif;
     color: #ffffff;
+    scroll-behavior: smooth;
+    overflow: hidden; /* Isso remove a barra de rolagem completamente */
+    height: 100vh;
 }
 
 body{
     background: #000000;
     background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(33, 33, 33, 1) 100%, rgba(54, 54, 54, 1) 53%);
+    overflow: hidden; /* Isso remove a barra de rolagem completamente */
+    height: 100vh;
+}
+
+header{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    background-color: #000000;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-family: Roboto, sans-serif;
+}
+
+header ul{
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav{
+    width: 100%;
+}
+
+nav ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav ul li{
+    margin: 0px 20px;
+    list-style: none;
 }
 
 h1{
@@ -31,16 +80,42 @@ h1{
 
 span{
     color: #3f3e3e;
-
+    font-family: Funnel Display, sans-serif;
 }
 
 main{
     height: 100vh;
     width: 100%;
+    position: relative; /* Necessário para os painéis se posicionarem dentro dele */
+    overflow: hidden;
+}
+
+.panel {
+    position: absolute; /* Tira do fluxo normal e coloca um sobre o outro */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    /* Aqui criamos o estado inativo (profundidade) */
+    opacity: 0;
+    transform: translateY(40px) scale(0.95); /* Joga um pouco para baixo e diminui */
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none; /* Evita que o usuário clique em botões de painéis invisíveis */
+    z-index: 1;
+}
+
+/* Esta é a classe que o JavaScript vai adicionar para mostrar o painel */
+.panel.ativo {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Traz para o tamanho e posição originais */
+    pointer-events: auto;
+    z-index: 10;
 }
 
 .section-nome h1{
@@ -82,6 +157,8 @@ button {
   cursor: pointer;
   background: #000000;
   gap: 15px;
+  border: solid .5px transparent;
+  transition: 0.2s ease-in-out;
 }
 
 .followers {
@@ -90,20 +167,28 @@ button {
 }
 
 button:hover {
-  background: #2b2a2a;
+  background: transparent;
+  border: solid .5px #ffffff;
+  transition: step-end;
+  transition: 0.2s ease-in-out;
 }
 
 
-footer{
+footer {
     width: 100%;
-    height: 100%;
     padding: 10px;
-    background: transparent;
+    background: #fff; 
     display: flex;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; 
 }
 
 h4 a{
     text-decoration: none;
-    color: #fff;
+    color: #000000;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
+
